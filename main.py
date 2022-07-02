@@ -31,4 +31,7 @@ if __name__ == '__main__':
   for extension in initial_extensions:
     client.load_extension(extension)
   keep_alive()
-  client.run(os.environ['TOKEN'])
+  try:
+    client.run(os.environ['TOKEN'])
+  except:
+    os.system('kill 1')
